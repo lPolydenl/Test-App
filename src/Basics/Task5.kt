@@ -1,3 +1,5 @@
+package Basics
+
 import kotlin.math.log
 
 fun main()

@@ -1,3 +1,5 @@
+package Basics
+
 fun main(){
     var input:Int = readln().toInt();
     var outputReversed:String = "";

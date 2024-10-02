@@ -1,3 +1,5 @@
+package Basics
+
 fun main() {
     var input = readln();
     var count = 0;

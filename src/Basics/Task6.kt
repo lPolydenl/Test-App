@@ -1,3 +1,5 @@
+package Basics
+
 fun main()
 {
     val a:Int = readln().toInt();

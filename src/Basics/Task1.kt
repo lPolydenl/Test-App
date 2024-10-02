@@ -1,3 +1,5 @@
+package Basics
+
 fun main() {
     val input = readln();
     var count = 0;

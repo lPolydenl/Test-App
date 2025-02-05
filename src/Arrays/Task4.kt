@@ -21,4 +21,21 @@ fun main()
         }
         secondList.addLast(i.toInt());
     }
+var thirdList:MutableList<Int> = mutableListOf();
+    for(i in 0 until firstList.size)
+    {
+        for(j in 0 until secondList.size)
+        {
+            if(firstList[i] == secondList[j])
+            {
+                thirdList.addLast(secondList[j])
+                secondList.removeAt(j);
+                break;
+            }
+        }
+    }
+    for(i in 0 until thirdList.size)
+    {
+        println(thirdList[i]);
+    }
 }

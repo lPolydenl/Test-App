@@ -10,7 +10,10 @@ class PizzaMoscow (
     override fun showCheckPhoto() {
         println("У вас есть фотография чека?")
         println("1. Да\n2. Нет")
-        if (readln() == "1") println("Вам будет скидка 50 рублей с покупки")
+        if (readln() == "1") {
+            println("Вам будет скидка $discountMoney рублей с покупки")
+            checkCount++;
+        }
     }
     override fun neapolitanPizzaSale() {
         neapolitanPizzaCount++

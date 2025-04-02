@@ -10,11 +10,11 @@ abstract class PizzaCity (
     var sicilianPizzaCount = 0
     var tyroleanPizzaCount = 0
 
-    var checkCount = 0
-    var discountMoney = 0
+    protected var checkCount = 0
+    protected var discountMoney = 50
 
-    var drinkCount = 0
-    var drinkMoney = 0
+    protected var drinkCount = 0
+    protected var drinkMoney = 200
 
     abstract fun neapolitanPizzaSale()
     abstract fun romanPizzaSale()
@@ -27,11 +27,28 @@ abstract class PizzaCity (
         println("Продано римской пиццы: $romanPizzaCount")
         println("Продано тирольской пиццы: $tyroleanPizzaCount")
         val count = sicilianPizzaCount + neapolitanPizzaCount + romanPizzaCount + tyroleanPizzaCount
-        println("Количество чеков: $count")
+
         val money = neapolitanPizzaCount * neapolitanPizzaPrice + romanPizzaCount * romanPizzaPrice +
                 sicilianPizzaCount * sicilianPizzaPrice + tyroleanPizzaCount * tyroleanPizzaPrice +
-                drinkMoney - discountMoney
+                drinkMoney * drinkCount - discountMoney * checkCount
+
+
 
         println ("Всего заработано денег: $money")
+
+        if (this is Drink)
+        {
+            val drinkRate:Double = drinkCount.toDouble() / count * 100;
+            println("Частота заказов кофе: $drinkRate")
+            println("Сколько раз купили кофе: $drinkCount")
+        }
+        if (this is CheckPhoto)
+        {
+            val checkRate:Double = checkCount.toDouble() / count * 100;
+            println("Частота показа чеков: $checkRate")
+            println("Сколько раз показали чеки: $checkCount")
+        }
+
+
     }
 }
